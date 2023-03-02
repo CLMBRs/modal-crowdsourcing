@@ -5,6 +5,7 @@
       "Expression":"must",
       "Force":"Necessity",
       "Flavor":"Epistemic",
+      "polarity":"positive",
       "Index":1
    },
    {
@@ -13,6 +14,7 @@
       "Expression":"must",
       "Force":"Necessity",
       "Flavor":"Epistemic",
+      "polarity":"positive",
       "Index":2
    },
    {
@@ -21,6 +23,7 @@
       "Expression":"must",
       "Force":"Necessity",
       "Flavor":"Epistemic",
+      "polarity":"positive",
       "Index":3
    },
    {
@@ -29,6 +32,7 @@
       "Expression":"must",
       "Force":"Necessity",
       "Flavor":"Epistemic",
+      "polarity":"positive",
       "Index":4
    },
    {
@@ -37,6 +41,7 @@
       "Expression":"should",
       "Force":"Weak Necessity",
       "Flavor":"Epistemic",
+      "polarity":"positive",
       "Index":5
    },
    {
@@ -45,6 +50,7 @@
       "Expression":"should",
       "Force":"Weak Necessity",
       "Flavor":"Epistemic",
+      "polarity":"positive",
       "Index":6
    },
    {
@@ -53,6 +59,7 @@
       "Expression":"should",
       "Force":"Weak Necessity",
       "Flavor":"Epistemic",
+      "polarity":"positive",
       "Index":7
    },
    {
@@ -61,6 +68,7 @@
       "Expression":"might",
       "Force":"Possibility",
       "Flavor":"Epistemic",
+      "polarity":"positive",
       "Index":8
    },
    {
@@ -69,6 +77,7 @@
       "Expression":"might",
       "Force":"Possibility",
       "Flavor":"Epistemic",
+      "polarity":"positive",
       "Index":9
    },
    {
@@ -77,6 +86,7 @@
       "Expression":"may",
       "Force":"Possibility",
       "Flavor":"Epistemic",
+      "polarity":"positive",
       "Index":10
    },
    {
@@ -85,6 +95,7 @@
       "Expression":"might",
       "Force":"Possibility",
       "Flavor":"Epistemic",
+      "polarity":"positive",
       "Index":11
    },
    {
@@ -93,6 +104,7 @@
       "Expression":"must",
       "Force":"Necessity",
       "Flavor":"Deontic",
+      "polarity":"positive",
       "Index":12
    },
    {
@@ -101,6 +113,7 @@
       "Expression":"must",
       "Force":"Necessity",
       "Flavor":"Deontic",
+      "polarity":"positive",
       "Index":13
    },
    {
@@ -109,6 +122,7 @@
       "Expression":"ought to",
       "Force":"Weak Necessity",
       "Flavor":"Deontic",
+      "polarity":"positive",
       "Index":16
    },
    {
@@ -117,6 +131,7 @@
       "Expression":"ought to",
       "Force":"Weak Necessity",
       "Flavor":"Deontic",
+      "polarity":"positive",
       "Index":17
    },
    {
@@ -125,6 +140,7 @@
       "Expression":"ought to",
       "Force":"Weak Necessity",
       "Flavor":"Deontic",
+      "polarity":"positive",
       "Index":18
    },
    {
@@ -133,6 +149,7 @@
       "Expression":"may",
       "Force":"Possibility",
       "Flavor":"Deontic",
+      "polarity":"positive",
       "Index":19
    },
    {
@@ -141,6 +158,7 @@
       "Expression":"may",
       "Force":"Possibility",
       "Flavor":"Deontic",
+      "polarity":"positive",
       "Index":20
    },
    {
@@ -149,6 +167,7 @@
       "Expression":"can",
       "Force":"Possibility",
       "Flavor":"Deontic",
+      "polarity":"positive",
       "Index":21
    },
    {
@@ -157,6 +176,7 @@
       "Expression":"can",
       "Force":"Possibility",
       "Flavor":"Deontic",
+      "polarity":"positive",
       "Index":22
    },
    {
@@ -165,6 +185,7 @@
       "Expression":"can",
       "Force":"Possibility",
       "Flavor":"Deontic",
+      "polarity":"positive",
       "Index":23
    },
    {
@@ -173,6 +194,7 @@
       "Expression":"have to",
       "Force":"Necessity",
       "Flavor":"Teleological",
+      "polarity":"positive",
       "Index":24
    },
    {
@@ -181,6 +203,7 @@
       "Expression":"have to",
       "Force":"Necessity",
       "Flavor":"Teleological",
+      "polarity":"positive",
       "Index":25
    },
    {
@@ -189,6 +212,7 @@
       "Expression":"have to",
       "Force":"Necessity",
       "Flavor":"Teleological",
+      "polarity":"positive",
       "Index":26
    },
    {
@@ -197,6 +221,7 @@
       "Expression":"should",
       "Force":"Weak Necessity",
       "Flavor":"Teleological",
+      "polarity":"positive",
       "Index":27
    },
    {
@@ -205,6 +230,7 @@
       "Expression":"should",
       "Force":"Weak Necessity",
       "Flavor":"Teleological",
+      "polarity":"positive",
       "Index":28
    },
    {
@@ -213,6 +239,7 @@
       "Expression":"should",
       "Force":"Weak Necessity",
       "Flavor":"Teleological",
+      "polarity":"positive",
       "Index":29
    },
    {
@@ -221,6 +248,7 @@
       "Expression":"can",
       "Force":"Possibility",
       "Flavor":"Teleological",
+      "polarity":"positive",
       "Index":30
    },
    {
@@ -229,6 +257,7 @@
       "Expression":"can",
       "Force":"Possibility",
       "Flavor":"Teleological",
+      "polarity":"positive",
       "Index":31
    },
    {
@@ -237,6 +266,7 @@
       "Expression":"can",
       "Force":"Possibility",
       "Flavor":"Teleological",
+      "polarity":"positive",
       "Index":32
    },
    {
@@ -245,6 +275,7 @@
       "Expression":"have to",
       "Force":"Necessity",
       "Flavor":"Circumstantial",
+      "polarity":"positive",
       "Index":33
    },
    {
@@ -253,6 +284,7 @@
       "Expression":"have to",
       "Force":"Necessity",
       "Flavor":"Circumstantial",
+      "polarity":"positive",
       "Index":34
    },
    {
@@ -261,6 +293,7 @@
       "Expression":"must",
       "Force":"Necessity",
       "Flavor":"Circumstantial",
+      "polarity":"positive",
       "Index":35
    },
    {
@@ -269,6 +302,7 @@
       "Expression":"can",
       "Force":"Possibility",
       "Flavor":"Circumstantial",
+      "polarity":"positive",
       "Index":36
    },
    {
@@ -277,6 +311,7 @@
       "Expression":"can",
       "Force":"Possibility",
       "Flavor":"Circumstantial",
+      "polarity":"positive",
       "Index":37
    },
    {
@@ -285,6 +320,7 @@
       "Expression":"can",
       "Force":"Possibility",
       "Flavor":"Circumstantial",
+      "polarity":"positive",
       "Index":38
    },
    {
@@ -293,6 +329,7 @@
       "Expression":"can",
       "Force":"Possibility",
       "Flavor":"Circumstantial",
+      "polarity":"positive",
       "Index":39
    },
    {
@@ -301,6 +338,7 @@
       "Expression":"can",
       "Force":"Possibility",
       "Flavor":"Circumstantial",
+      "polarity":"positive",
       "Index":40
    },
    {
@@ -309,6 +347,7 @@
       "Expression":"must",
       "Force":"Necessity",
       "Flavor":"Bouletic",
+      "polarity":"positive",
       "Index":41
    },
    {
@@ -317,6 +356,7 @@
       "Expression":"must",
       "Force":"Necessity",
       "Flavor":"Bouletic",
+      "polarity":"positive",
       "Index":42
    },
    {
@@ -325,7 +365,134 @@
       "Expression":"want",
       "Force":"Necessity",
       "Flavor":"Bouletic",
+      "polarity":"positive",
       "Index":43
+   },
+   {
+      "Context":"When the light is on at Mary’s house, it usually means that she is home. You want to visit Mary. You walk past Mary’s house and notice that the light is on. However, there is no car in the driveway. You think to yourself:",
+      "Sentence":"Mary may not be at home.",
+      "Expression":"may",
+      "Force":"Necessity",
+      "Flavor":"Epistemic",
+      "polarity":"negative",
+      "Index":-7
+   },
+   {
+      "Context":"Ben goes swimming every day. Ben is not obliged or required to go swimming; it is just a habit of his. It is now time for Ben to be swimming, so...",
+      "Sentence":"Ben can’t be at home. ",
+      "Expression":"can",
+      "Force":"Possibility",
+      "Flavor":"Epistemic",
+      "polarity":"negative",
+      "Index":-1
+   },
+   {
+      "Context":"The math teacher says: There are 3 boxes. The ball is in box A or in box B or in box C. We opened box A, and the ball is there. There is only one ball. So,",
+      "Sentence":"it can’t be in C.",
+      "Expression":"can",
+      "Force":"Possibility",
+      "Flavor":"Epistemic",
+      "polarity":"negative",
+      "Index":-3
+   },
+   {
+      "Context":"Your friend is having a birthday party. She tells you that she would like it if everyone invited wore formal clothes, but that it is not necessary to wear formal clothes to attend. You think to yourself… I ought to wear formal clothes to the party, but",
+      "Sentence 1":"I don’t have to wear formal clothes.",
+      "Expression":"have to",
+      "Force":"Necessity",
+      "Flavor":"Deontic",
+      "polarity":"negative",
+      "Index":-16
+   },
+   {
+      "Context":"In England, it is recommended that face coverings be worn in stores, but it is not a legal requirement. You plan on going shopping, and you think to yourself… I ought to wear a face covering, but",
+      "Sentence":" I needn’t wear a face covering.",
+      "Expression":"need",
+      "Force":"Necessity",
+      "Flavor":"Deontic",
+      "polarity":"negative",
+      "Index":-18
+   },
+   {
+      "Context":"In Indonesia, the law states that when you ride a motor bike,",
+      "Sentence":"You mustn’t ride a motor bike without a helmet.",
+      "Expression":"must",
+      "Force":"Possibility",
+      "Flavor":"Deontic",
+      "polarity":"negative",
+      "Index":-12
+   },
+   {
+      "Context":"You are going to visit your friend in the hospital. When you enter into the hospital, you stop at the information desk to inquire what room your friend is in. But the woman at the information desk tells you that you can’t visit your friend now because it’s already 8pm. She says, “I’m sorry, the hospital regulations say that...",
+      "Sentence":"Visitors mustn’t stay after 6pm.",
+      "Expression":"must",
+      "Force":"Possibility",
+      "Flavor":"Deontic",
+      "polarity":"negative",
+      "Index":-13
+   },
+   {
+      "Context":"There are different ways to get to the shopping centre. You can go by foot, by bus, or drive yourself. You are not sure how to go. Your friend advises you to get the bus because it is cheaper… To get to the shopping centre, you should take the bus, but",
+      "Sentence":"you don’t need to / needn’t take the bus",
+      "Expression":"need",
+      "Force":"Necessity",
+      "Flavor":"Teleological",
+      "polarity":"negative",
+      "Index":-27
+   },
+   {
+      "Context":"There is only one main road from Location A to Location B… If you are going from Location A to Location B,",
+      "Sentence":"you can’t take another road.",
+      "Expression":"can",
+      "Force":"Possibility",
+      "Flavor":"Teleological",
+      "polarity":"negative",
+      "Index":-24
+   },
+   {
+      "Context":"Team A are playing in a tournament. In order to advance,",
+      "Sentence":"Team A can’t lose to Team B.",
+      "Expression":"can",
+      "Force":"Necessity",
+      "Flavor":"Deontic",
+      "polarity":"negative",
+      "Index":-25
+   },
+   {
+      "Context":"Given the way this volcano has been active in the past 100 years, it is likely but not certain that it will erupt in the next 5 years. ",
+      "Sentence":"The volcano doesn’t have to erupt.",
+      "Expression":"have to",
+      "Force":"Necessity",
+      "Flavor":"Circumstantial",
+      "polarity":"negative",
+      "Index":44
+   },
+   {
+      "Context":"Ben was in a motorbike accident 3 weeks ago. He sprained his ankle and is in a lot of pain. ",
+      "Sentence":"Ben can’t walk.",
+      "Expression":"can",
+      "Force":"Possibility",
+      "Flavor":"Circumstantial",
+      "polarity":"negative",
+      "Index":-34
+   },
+   {
+      "Context":"Water is entering a pipe, which has two outputs: the left output and the right output. But, you know that the left output is blocked. And the water is coming out from the right output. You say: ",
+      "Sentence":"the water can’t come out from the left output. ",
+      "Expression":"can",
+      "Force":"Possibility",
+      "Flavor":"Circumstantial",
+      "polarity":"negative",
+      "Index":-35
+   },
+   {
+      "Context":"Ani came to visit a small Caribbean island. She noticed that the climate and many of the plants are very different to the places she visited in Indonesia, where duku trees grow. The types of rocks and the soil are different as well. She doesn’t know whether or not there are duku trees on the island. But because the temperature, rainfall, and soil are so different, she thinks that…",
+      "Sentence":"duku trees can’t grow here.",
+      "Expression":"can",
+      "Force":"Possibility",
+      "Flavor":"Circumstantial",
+      "polarity":"negative",
+      "Index":-36
    }
 
 ]
