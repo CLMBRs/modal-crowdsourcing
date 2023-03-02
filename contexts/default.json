@@ -1,0 +1,18 @@
+[
+   {
+      "Context":"Ben goes swimming every day. Ben is not obliged or required to go swimming; it is just a habit of his. It is now time for Ben to be swimming… so",
+      "Sentence":" Ben must be swimming (right now)",
+      "Expression":"must",
+      "Force":"Necessity",
+      "Flavor":"Epistemic",
+      "Index":1
+   },
+   {
+      "Context":"You know that John goes to school at 9am every day. You look at the clock and see it is 9am, therefore ",
+      "Sentence":"John must be at school",
+      "Expression":"must",
+      "Force":"Necessity",
+      "Flavor":"Epistemic",
+      "Index":1
+   }
+]
