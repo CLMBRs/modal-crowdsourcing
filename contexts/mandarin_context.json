@@ -1,7 +1,7 @@
 [
    {
       "Context":"小明每天都会去游泳。小明没有义务也没有被要求去游泳—这只是他自己的习惯。现在是小明去游泳的时间了，所以",
-      "Sentence":"小明现在一定在游泳",
+      "Sentence":"小明现在[MODAL]在游泳",
       "Expression":"一定",
       "Force":"Necessity",
       "Flavor":"Epistemic",
@@ -10,7 +10,7 @@
    },
    {
       "Context":"你知道小红每天早上九点去上学。你看了看钟，发现现在是九点整，所以 ",
-      "Sentence":"小红一定在学校",
+      "Sentence":"小红[MODAL]在学校",
       "Expression":"一定",
       "Force":"Necessity",
       "Flavor":"Epistemic",
@@ -19,7 +19,7 @@
    },
    {
       "Context":"数学老师说，“球在第一个箱子，或者第二个箱子，或者第三个箱子里。它不在第一个箱子里。 它也不在 第二个箱子里。所以，",
-      "Sentence":"球一定在c里面",
+      "Sentence":"球[MODAL]在c里面",
       "Expression":"一定",
       "Force":"Necessity",
       "Flavor":"Epistemic",
