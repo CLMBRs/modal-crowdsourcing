@@ -18,6 +18,8 @@
     const modals = ['必须','一定','要','应该'];
     const modals_sampled = jsPsych.randomization.sampleWithReplacement(modals,1);
     const modal = modals_sampled[0];
+  
+    var context_info;
 
     // all the context information stored in question info
     function readTextFile(file, callback) {
@@ -26,18 +28,19 @@
     rawFile.open("GET", file, true);
     rawFile.onreadystatechange = function() {
         if (rawFile.readyState === 4 && rawFile.status == "200") {
-            var d = callback(rawFile.responseText);
-            return d;
+            callback(rawFile.responseText);
         }
     }
     rawFile.send(null);
 	}
 
-	const test = readTextFile("contexts/mandarin_context.json",function(text){var data = JSON.parse(text);
-	console.log(data);return data});
+	readTextFile("contexts/mandarin_context.json",function(text){
+		var data = JSON.parse(text);
+		console.log(data);
+		context_info=data;);
 
 
-  console.log(test)
+  console.log(context_info);
 
   // let test = require('contexts/mandarin_context.json')
   // console.log(test,'testing if this works')
