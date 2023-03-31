@@ -29,8 +29,7 @@
     rawFile.onreadystatechange = function() {
         if (rawFile.readyState === 4 && rawFile.status == "200") {
             // callback(rawFile.responseText);
-	    var data = JSON.parse(rawFile.responseText);
-	    context_info =data;
+	    context_info = JSON.parse(rawFile.responseText);
 	
         }
     }
