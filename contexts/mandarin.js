@@ -465,7 +465,7 @@ var context_info=[
       "Force":"Necessity",
       "Flavor":"Circumstantial",
       "polarity":"negative",
-      "Index":44
+      "Index":-44
    },
    {
       "Context":"小郑在 3 周前遭遇了一场摩托车事故。 他扭伤了脚踝，感到非常痛苦。",
@@ -496,3 +496,14 @@ var context_info=[
    }
 
 ];
+
+let modals = new Array();
+
+for (let i = 0; i < context_info.length;i++)
+{
+   if(!(modals.includes(context_info[i].Expression)))
+   {
+      modals.push(context_info[i].Expression);
+   }
+   
+}
