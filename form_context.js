@@ -1,4 +1,3 @@
-fetch('./contexts/mandarin_context.json')
-  .then(response => response.json())
-  .then(data => console.log(data))
-  .catch(error => console.log(error));
+import test from './contexts/mandarin_context.json' assert {type:'json'};
+
+console.log(test);
