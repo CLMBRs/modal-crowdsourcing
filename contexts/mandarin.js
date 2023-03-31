@@ -497,13 +497,3 @@ var context_info=[
 
 ];
 
-let modals = new Array();
-
-for (let i = 0; i < context_info.length;i++)
-{
-   if(!(modals.includes(context_info[i].Expression)))
-   {
-      modals.push(context_info[i].Expression);
-   }
-   
-}
