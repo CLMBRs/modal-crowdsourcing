@@ -14,8 +14,9 @@
   <script>
     const jsPsych = initJsPsych({experiment_width:1000});
 
-    // initializing modal variables before the start of the trial, need to come back to this later
-    console.log(modals)
+
+    console.log(context_info);
+    // initializing modal variables before the start of the trial
     const modals_sampled = jsPsych.randomization.sampleWithReplacement(modals,1);
     const modal = modals_sampled[0];
 
