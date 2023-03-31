@@ -6,6 +6,8 @@
     <script src="jspsych/plugin-html-keyboard-response.js"></script>
     <script src="jspsych/plugin-html-button-response.js"></script>
     <script src="jspsych/plugin-survey.js"></script>
+    <script type="module" src="form_context.js"></script>>
+    <script type="text/javascript" src="./contexts/mandarin.js"></script>
     <script src="https://unpkg.com/@jspsych-contrib/plugin-pipe"></script>
     <link href="jspsych/jspsych.css" rel="stylesheet" type="text/css" />
   </head>
@@ -19,25 +21,29 @@
     const modals_sampled = jsPsych.randomization.sampleWithReplacement(modals,1);
     const modal = modals_sampled[0];
 
+    const info = context_info[0];
+    console.log(context_info[0].Context)
+    console.log(test)
+
     // all the context information stored in question info
-    function readTextFile(file, callback) {
-    var rawFile = new XMLHttpRequest();
-    rawFile.overrideMimeType("application/json");
-    rawFile.open("GET", file, true);
-    rawFile.onreadystatechange = function() {
-        if (rawFile.readyState === 4 && rawFile.status == "200") {
-            var d = callback(rawFile.responseText);
-            return d;
-        }
-    }
-    rawFile.send(null);
-	}
+ //    function readTextFile(file, callback) {
+ //    var rawFile = new XMLHttpRequest();
+ //    rawFile.overrideMimeType("application/json");
+ //    rawFile.open("GET", file, true);
+ //    rawFile.onreadystatechange = function() {
+ //        if (rawFile.readyState === 4 && rawFile.status == "200") {
+ //            var d = callback(rawFile.responseText);
+ //            return d;
+ //        }
+ //    }
+ //    rawFile.send(null);
+	// }
 
-	const test = readTextFile("contexts/mandarin_context.json",function(text){var data = JSON.parse(text);
-	console.log(data);return data});
+	// const test = readTextFile("contexts/mandarin_context.json",function(text){var data = JSON.parse(text);
+	// console.log(data);return data});
 
 
-  console.log(test[0])
+ //  console.log(test[0])
 
   // let test = require('contexts/mandarin_context.json')
   // console.log(test,'testing if this works')
