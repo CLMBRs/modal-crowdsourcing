@@ -26,14 +26,16 @@
     rawFile.open("GET", file, true);
     rawFile.onreadystatechange = function() {
         if (rawFile.readyState === 4 && rawFile.status == "200") {
-            callback(rawFile.responseText);
+            var d = callback(rawFile.responseText);
+            return d;
         }
     }
     rawFile.send(null);
 	}
 
-	readTextFile("contexts/mandarin_context.json",function(text){var data = JSON.parse(text);
-		console.log(data)});
+	const test = readTextFile("contexts/mandarin_context.json",function(text){var data = JSON.parse(text);
+	console.log(data);return data});
+
   // let test = require('contexts/mandarin_context.json')
   // console.log(test,'testing if this works')
 
