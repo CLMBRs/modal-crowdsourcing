@@ -15,16 +15,6 @@
     const jsPsych = initJsPsych({experiment_width:1000});
 
     // initializing modal variables before the start of the trial
-    let modals = new Array();
-
-    for (let i = 0; i < context_info.length;i++)
-    {
-      if(!(modals.includes(context_info[i].Expression)))
-      {
-          modals.push(context_info[i].Expression);
-      }
-      
-    }
     const modals_sampled = jsPsych.randomization.sampleWithReplacement(modals,1);
     const modal = modals_sampled[0];
 
@@ -34,12 +24,13 @@
       let final_contexts = new Array();
       for (let i =0;i<all_info.length;i++)
       {
-        if(all_info[i].polarity=='positive')
+        if(all_info[i].polarity=='positive'&&all_info[i].Index>=0)
         {
           c = all_info[i].Context;
           exp = all_info[i].Sentence;
           s = exp.replace("[MODAL]",selected_modal);
-          var info = {context:c,expressions:s};
+          s_final = s.replace("[MODAL]",selected_modal);
+          var info = {context:c,expressions:s_final};
           final_contexts.push(info);
         }
       }
