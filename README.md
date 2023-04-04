@@ -1,3 +1,4 @@
-# modal-crowdsourcing
+# Semantics Crowdsourcing Experiment in Modals
 
-This is an experiment template for crowdsourcing responses for modals under various (force,flavor) contexts.
+## Overview
+This is an experiment template for crowdsourcing responses. Experiment aims at getting truth value judgement of Mandarin modal expressions under various contexts. Full experiment can be found [here](https://clmbr.shane.st/modal-crowdsourcing/)
