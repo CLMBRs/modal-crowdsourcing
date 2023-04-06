@@ -30,7 +30,7 @@
           exp = all_info[i].Sentence;
           s = exp.replace("[MODAL]",selected_modal);
           s_final = s.replace("[MODAL]",selected_modal);
-          var info = {context:c,expressions:s_final};
+          var info = {context:c,expressions:s_final,index:all_info[i].Index};
           final_contexts.push(info);
         }
       }
@@ -100,7 +100,9 @@
         // Add data at the whole-trial level here
         data: {
           'context': jsPsych.timelineVariable('context'),
-          'expressions': jsPsych.timelineVariable('expressions'),                                                  
+          'expressions': jsPsych.timelineVariable('expressions'),
+          'context_index':jsPsych.timelineVariable('index'),
+          'modal':modal                                                  
         },
         button_label_finish: '下一页',
         required_error: true             
