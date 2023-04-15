@@ -18,8 +18,8 @@ var context_info=[
       "Index":2
    },
    {
-      "Context":"数学老师说，“球在第一个箱子，或者第二个箱子，或者第三个箱子里。它不在第一个箱子里。 它也不在 第二个箱子里。所以，",
-      "Sentence":"球[MODAL]在c里面",
+      "Context":"数学老师说，“球在第一个箱子，或者第二个箱子，或者第三个箱子里。它不在第一个箱子里。 它也不在第二个箱子里。所以，",
+      "Sentence":"球[MODAL]在第三个箱子里面",
       "Expression":"绝对",
       "Force":"Necessity",
       "Flavor":"Epistemic",
