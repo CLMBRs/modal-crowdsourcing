@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Experiment V3</title>
+    <script src="../jspsych/jspsych.js"></script>
+    <script src="../jspsych/plugin-html-keyboard-response.js"></script>
+    <script src="../jspsych/plugin-html-button-response.js"></script>
+    <script src="../jspsych/plugin-survey.js"></script>
+    <script type="text/javascript" src="../contexts/mandarin.js"></script>
+    <script src="https://unpkg.com/@jspsych-contrib/plugin-pipe"></script>
+    <link href="../jspsych/jspsych.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body></body>
+  <script>
+    const jsPsych = initJsPsych({experiment_width:1000});
+
+    // initializing modal variables before the start of the trial
+    const modals_sampled = jsPsych.randomization.sampleWithReplacement(all_modals,1);
+    const modal = modals_sampled[0];
+    console.log(modal);
+    
+    // a function that formulate questions 
+    function forumulate_contexts(selected_modal,all_info)
+    {
+      let final_contexts = new Array();
+      for (let i =0;i<all_info.length;i++)
+      {
+       
+        if(all_info[i].polarity=='positive'&&all_info[i].Index>=0)
+        {
+          c = all_info[i].Context;
+          exp = all_info[i].Sentence;
+          original = all_info[i].Expression;
+          o = exp.replace("[MODAL]",original);
+          o1 = o.replace("[MODAL]",original);
+          o2 = o1.replace("[CONCORD]","");
+          o3 = o2.replace("[CONCORD]","");
+          s = exp.replace("[MODAL]",selected_modal);
+          s_final = s.replace("[MODAL]",selected_modal);
+          if(s_final.includes("[CONCORD]")){
+          ignore = concords.concat(all_info[i].Concord_Not_Required);
+          replace = (ignore.includes(selected_modal))?"":all_info[i].Required_Concord;
+          s2 = s_final.replace("[CONCORD]",replace);
+          s_final = s2.replace("[CONCORD]",replace);
+
+          }
+          var info = {context:c,expressions:s_final,index:all_info[i].Index,intended:o3};
+          final_contexts.push(info);
+        }
+      }
+      return final_contexts;
+    }
+
+
+
+    const question_info = forumulate_contexts(modal,context_info);
+
+
+
+    const instruction = {
+      type: jsPsychHtmlButtonResponse,
+      prompt:"",
+      stimulus: "<p><strong>中文情态动词的调查问卷</strong><\p> 这个调查问卷旨在研究不同语境下，情态动词的用法。受试者需要根据语境判断表达方式是否正确。问卷共40道题，填写大约需要5-10分钟。在选择时需要判断表达是否正确。",
+      choices:["按此处开始"],
+      trial_duration:100000
+    };
+
+    const tutorial_instruction= {
+      type: jsPsychHtmlButtonResponse,
+      prompt:"",
+      stimulus: "实验正式前会进行一段演示，演示中会示范如何判断语意是否符合逻辑，演示轮的选择并不会被记录。",
+      choices:["按此处开始演示"],
+      trial_duration:100000
+    };
+
+    const tutorial = {
+      type: jsPsychSurvey,
+      pages: [
+      [
+        {
+          type: 'html',
+          prompt: "<font size='+1'>根据运算法则，1+1=2</font>"
+        },
+
+        {
+          type: 'multi-choice',
+          prompt: "下列说法是否正确：1+1可能等于2",
+          options: ['正确', '不正确','有点奇怪'],
+        },
+        {
+          type: 'html',
+          prompt:"<p>此处回答：<FONT COLOR='RED'> 正确</FONT>，因为1+1一定等于2，包含了1+1可能等于2的情况<\p>",
+        },
+      ],   
+      [
+        {
+          type: 'html',
+          prompt: "<font size='+1'>今天是开学第一天，我可能会去听数学课</font>"
+        },
+        {
+          type: 'multi-choice',
+          prompt: "下列说法是否正确：我一定会去听数学课",
+          options: ['正确', '不正确','有点奇怪'],
+        },
+        {
+          type: 'html',
+          prompt:"<p>此处可以回答：<FONT COLOR='RED'> 不正确</FONT>，听数学课这个事件不是绝对会发生的，所以这里是不正确的<\p>",
+        },
+      ],
+      [
+        {
+          type:'html',
+          prompt:"当你不确定正误时，可以选择<b>有点奇怪</b>作为答案"
+        }]
+      
+      ],
+      button_label_next: "点此处继续",
+      button_label_back:"上一页",
+      button_label_finish:"演示到此结束，点击此处开始实验"
+    }
+
+    const survey = {
+        type: jsPsychSurvey,
+        pages: [
+          [
+            {
+              type: 'html',
+              prompt: function(){
+                var q = jsPsych.timelineVariable('context')+'<b>'+jsPsych.timelineVariable('intended')+'</b>';
+                return q;
+            }
+            },
+            
+
+            {
+              type: 'multi-choice',
+              prompt:function(){
+                return "下列说法是否正确："+jsPsych.timelineVariable('expressions');
+              },
+              options: ["正确","不正确","有点奇怪"],
+              required: true
+            }
+          ]
+        ],
+        // Add data at the whole-trial level here
+        data: {
+          'context': jsPsych.timelineVariable('context'),
+          'original_expressions': jsPsych.timelineVariable('intended'),
+          'expressions': jsPsych.timelineVariable('expressions'),
+          'context_index':jsPsych.timelineVariable('index'),
+          'modal':modal                                                  
+        },
+        button_label_finish: '下一页',
+        required_error: true             
+  };
+
+    const subject_id = jsPsych.randomization.randomID(10);
+    const filename = `${subject_id}.csv`;
+    
+
+
+    const save_data = {
+                type: jsPsychPipe,
+                action: "save",
+                experiment_id: "XkteGnTQFQA8",
+                filename: filename,
+                data_string: ()=>jsPsych.data.get().csv()
+              };
+
+              
+    const exit_instruction = {
+            type: jsPsychHtmlKeyboardResponse,
+            stimulus: "本实验到此结束。\n如果你有任何问题，欢迎通过邮箱联系我们，邮箱地址：<a href='mailto:qg07@uw.edu'>qg07@uw.edu</a>",
+            trial_duration:60000,
+            //on_finish: function(){jsPsych.endExperiment()}
+    };
+
+    var trial_timeline = {
+      timeline: [survey],
+      timeline_variables: question_info
+    };
+
+    jsPsych.run([instruction,tutorial_instruction,tutorial,trial_timeline,save_data,exit_instruction]);
+  </script>
+</html>
