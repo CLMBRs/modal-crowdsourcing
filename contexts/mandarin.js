@@ -10,8 +10,8 @@ var context_info=[
    },
    {
       "Context":"你知道小红每天早上九点去上学。你看了看钟，发现现在是九点整，所以你判断：",
-      "Sentence":"小红[MODAL]在学校",
-      "Expression":"一定",
+      "Sentence":"小红[MODAL]去上学了",
+      "Expression":"肯定",
       "Force":"Necessity",
       "Flavor":"Epistemic",
       "polarity":"positive",
@@ -28,7 +28,7 @@ var context_info=[
    },
    {
       "Context":"小明在叫他的小狗过来。小狗没有来。小明在屋里的所有地方找小狗，但小狗都不在。 因此，小明得出结论：",
-      "Sentence":"小狗[MODAL]不在屋内",
+      "Sentence":"因为屋内找不到小狗，所以小狗[MODAL]在屋外",
       "Expression":"一定",
       "Force":"Necessity",
       "Flavor":"Epistemic",
@@ -64,8 +64,10 @@ var context_info=[
    },
    {
       "Context":"语文老师不怎么靠谱。他的学生永远都不知道他是否会准时来上课。有时他来，有时他不来。现在距离他的课程开始还有两个小时，班上的学生正在等待上课，他们心想：",
-      "Sentence":"老师今天[MODAL]会来学校上课",
+      "Sentence":"老师今天[MODAL][CONCORD]来学校上课",
       "Expression":"可能",
+      "Required_Concord":"会",
+      "Concord_Not_Required":["必须","可以","需要"],
       "Force":"Possibility",
       "Flavor":"Epistemic",
       "polarity":"positive",
@@ -73,7 +75,7 @@ var context_info=[
    },
    {
       "Context":"小方正在寻找她的项链。 她不记得她最后一次是在哪里看到项链。她检查了她的首饰盒，但项链不在那里面。不过，还有几个地方她没有检查过，比如她的车。",
-      "Sentence":"小方[MODAL]弄丢她的项链了。",
+      "Sentence":"小方[MODAL]是弄丢了她的项链。",
       "Expression":"也许",
       "Force":"Possibility",
       "Flavor":"Epistemic",
@@ -90,7 +92,7 @@ var context_info=[
       "Index":10
    },
    {
-      "Context":"小李住在伦敦，他的朋友最近搬到了纽约。 小李的父母不允许他去纽约看他的朋友，因为纽约离伦敦太远了。 你听说小李下周要出游，但你不知道他会去哪里。 小李很叛逆，经常做一些不被允许的事情。于是你想：",
+      "Context":"小李住在伦敦，他的朋友最近搬到了纽约。 小李的父母不允许他去纽约看他的朋友，因为纽约离伦敦太远了。 你听说小李在旅游，但你不知道他在哪里。 小李很叛逆，经常做一些不被允许的事情。于是你想：",
       "Sentence":"小李[MODAL]在纽约",
       "Expression":"可能",
       "Force":"Possibility",
@@ -100,8 +102,10 @@ var context_info=[
    },
    {
       "Context":"在印度尼西亚，法律规定……",
-      "Sentence":"骑摩托时，[MODAL]戴头盔",
+      "Sentence":"骑摩托时，[MODAL][CONCORD]戴头盔",
       "Expression":"必须",
+      "Required_Concord":"要",
+      "Concord_Not_Required":["应该","必须","可以","需要"],
       "Force":"Necessity",
       "Flavor":"Deontic",
       "polarity":"positive",
@@ -109,8 +113,10 @@ var context_info=[
    },
    {
       "Context":"你要去医院探望你的朋友。 进了医院，你在问讯处询问你的朋友在哪个房间，但问讯处的工作人员告诉你，你现在不能去探望你的朋友，因为已经是晚上八点了。她说",
-      "Sentence":"对不起，医院规定访客[MODAL]在下午6点前离开。",
-      "Expression":"必须",
+      "Sentence":"对不起，医院规定访客[MODAL][CONCORD]在下午6点前离开。",
+      "Expression":"要",
+      "Required_Concord":"要",
+      "Concord_Not_Required":["应该","必须","可以","需要"],
       "Force":"Necessity",
       "Flavor":"Deontic",
       "polarity":"positive",
@@ -118,8 +124,10 @@ var context_info=[
    },
    {
       "Context":"你的朋友要办婚礼。 她说，她希望大家能够穿正装出席，但也不是强制的。 你心想……",
-      "Sentence":"我[MODAL]穿正式的衣服去参加她的聚会。",
+      "Sentence":"我[MODAL][CONCORD]穿正式的衣服去参加她的聚会。",
       "Expression":"应该",
+      "Required_Concord":"会",
+      "Concord_Not_Required":["应该","必须","可以","需要"],
       "Force":"Weak Necessity",
       "Flavor":"Deontic",
       "polarity":"positive",
@@ -127,8 +135,10 @@ var context_info=[
    },
    {
       "Context":"你的朋友告诉你，餐厅规定员工上完厕所后必须洗手。 你跟你的朋友说：",
-      "Sentence":"非员工也[MODAL]洗手！",
+      "Sentence":"非员工也[MODAL][CONCORD]洗手！",
       "Expression":"应该",
+      "Required_Concord":"要",
+      "Concord_Not_Required":["应该","必须","可以","需要"],
       "Force":"Weak Necessity",
       "Flavor":"Deontic",
       "polarity":"positive",
@@ -136,26 +146,32 @@ var context_info=[
    },
    {
       "Context":"在英格兰，一般会建议在商店中佩戴面罩，但不是强制的。 走进商店前，你心想……",
-      "Sentence":"我[MODAL]戴上口罩。",
+      "Sentence":"我[MODAL][CONCORD]戴上口罩。",
       "Expression":"应该",
+      "Required_Concord":"要",
+      "Concord_Not_Required":["应该","必须","可以","需要"],
       "Force":"Weak Necessity",
       "Flavor":"Deontic",
       "polarity":"positive",
       "Index":18
    },
    {
-      "Context":"这个摩天轮是给12岁以下儿童坐的。 小赵今年 10 岁。[如果他不想坐的话，小赵不会被强制要求坐摩天轮]",
-      "Sentence":"小赵[MODAL]会坐摩天轮。",
-      "Expression":"可能",
+      "Context":"这个摩天轮是给12岁以下儿童坐的。 小赵今年 10 岁。",
+      "Sentence":"小赵[MODAL][CONCORD]坐摩天轮。",
+      "Expression":"可以",
+      "Required_Concord":"要",
+      "Concord_Not_Required":["应该","必须","可以","需要"],
       "Force":"Possibility",
       "Flavor":"Deontic",
       "polarity":"positive",
-      "Index":-19
+      "Index":19
    },
    {
       "Context":"根据医院的规定，只有探视时间内可以进入病房。你来探望你的妹妹，但是已经过了探视的时间。非常善良/人很好的护士说……",
-      "Sentence":"你[MODAL]进入。",
+      "Sentence":"你[MODAL][CONCORD]进来探望。",
       "Expression":"可以",
+      "Required_Concord":"要",
+      "Concord_Not_Required":["应该","必须","可以","需要"],
       "Force":"Possibility",
       "Flavor":"Deontic",
       "polarity":"positive",
@@ -163,8 +179,10 @@ var context_info=[
    },
    {
       "Context":"你和朋友正在为明天晚上跟你的朋友聚会/见面做计划。你的朋友说：",
-      "Sentence":"你[MODAL]在我家过夜，也[MODAL]回家。",
+      "Sentence":"你[MODAL][CONCORD]在我家过夜，也[MODAL][CONCORD]回家。",
       "Expression":"可以",
+      "Required_Concord":"要",
+      "Concord_Not_Required":["应该","必须","可以","需要"],
       "Force":"Possibility",
       "Flavor":"Deontic",
       "polarity":"positive",
@@ -172,7 +190,7 @@ var context_info=[
    },
    {
       "Context":"小余刚才不小心从楼梯上摔下来，摔断了胳膊。 她手臂受伤的时候一直没抱起过她的小宝宝，因为小宝宝挺重的。终于，她康复了。她去医院做了最后的检查。做检查的时候，医生说，他允许小余抱小宝宝了。但是当她看完医生回到家时，小余发现她手臂仍然太虚弱/没力气，以至于无法抱起她的孩子……",
-      "Sentence":"小余[MODAL]抱起她的孩子",
+      "Sentence":"小余[MODAL][CONCORD]抱起她的孩子",
       "Expression":"可以",
       "Force":"Possibility",
       "Flavor":"Deontic",
@@ -181,8 +199,10 @@ var context_info=[
    },
    {
       "Context":"体育老师跟班上同学说，现在是自由活动时间，可以选择去游泳。小唐不会游泳所以不想去。老师对小唐说",
-      "Sentence":"同学，现在你[MODAL]去游泳",
+      "Sentence":"同学，现在你[MODAL][CONCORD]去游泳",
       "Expression":"可以",
+      "Required_Concord":"要",
+      "Concord_Not_Required":["应该","必须","可以","需要"],
       "Force":"Possibility",
       "Flavor":"Deontic",
       "polarity":"positive",
@@ -190,8 +210,10 @@ var context_info=[
    },
    {
       "Context":"从A市到B市只有国道108可以走。如果想从位置 A 到位置 B",
-      "Sentence":"你[MODAL]走国道108。",
+      "Sentence":"你[MODAL][CONCORD]走国道108。",
       "Expression":"需要",
+      "Required_Concord":"会",
+      "Concord_Not_Required":["应该","必须","可以","需要"],
       "Force":"Necessity",
       "Flavor":"Teleological",
       "polarity":"positive",
@@ -199,8 +221,10 @@ var context_info=[
    },
    {
       "Context":"A 队正在参加锦标赛/比赛。只有战胜了B队才可以晋级,所以为了晋级……",
-      "Sentence":"A队[MODAL]打赢B队",
+      "Sentence":"A队[MODAL][CONCORD]打赢B队",
       "Expression":"必须",
+      "Required_Concord":"要",
+      "Concord_Not_Required":["应该","必须","可以","需要"],
       "Force":"Necessity",
       "Flavor":"Teleological",
       "polarity":"positive",
@@ -208,8 +232,10 @@ var context_info=[
    },
    {
       "Context":"镇上最好吃的炸鸡是Gino's这家店的。 你邀请了你姐姐吃饭，你决定点炸鸡。 你告诉你姐姐：",
-      "Sentence":"为了吃到最好的炸鸡，我们[MODAL]从 Gino's 那里下单。",
+      "Sentence":"为了吃到最好的炸鸡，我们[MODAL][CONCORD]从 Gino's 那里下单。",
       "Expression":"必须",
+      "Required_Concord":"要",
+      "Concord_Not_Required":["应该","必须","可以","需要"],
       "Force":"Necessity",
       "Flavor":"Teleological",
       "polarity":"positive",
@@ -217,8 +243,10 @@ var context_info=[
    },
    {
       "Context":"到达市中心的方式有很多种。你可以步行、坐公交车，或者可以开车去。 你不确定要怎么去那里去方便。 你的朋友想建议你坐公交，因为这样更便宜，于是他说",
-      "Sentence":"去市中心，你[MODAL]坐公交",
+      "Sentence":"去市中心，你[MODAL][CONCORD]坐公交",
       "Expression":"应该",
+      "Required_Concord":"要",
+      "Concord_Not_Required":["应该","必须","可以","需要"],
       "Force":"Weak Necessity",
       "Flavor":"Teleological",
       "polarity":"positive",
@@ -226,8 +254,10 @@ var context_info=[
    },
    {
       "Context":"到海边的方式有两种：直接去,或者走小路。朋友A 说小路上的风景非常漂亮。 他说，",
-      "Sentence":"你[MODAL]走小路过去。",
+      "Sentence":"你[MODAL][CONCORD]走小路过去。",
       "Expression":"应该",
+      "Required_Concord":"要",
+      "Concord_Not_Required":["应该","必须","可以","需要"],
       "Force":"Weak Necessity",
       "Flavor":"Teleological",
       "polarity":"positive",
@@ -235,8 +265,10 @@ var context_info=[
    },
    {
       "Context":"你的朋友想以合适的价钱买一套职业套装穿着去上班。 这块区域有许多不错的选择，你恰好在其中其中一家店打工，而且你觉得这家店的价格比较合理。你说：",
-      "Sentence":"你[MODAL]去我工作的店里买一件新衬衫。",
+      "Sentence":"你[MODAL][CONCORD]去我工作的店里买一件新衬衫。",
       "Expression":"应该",
+      "Required_Concord":"要",
+      "Concord_Not_Required":["应该","必须","可以","需要"],
       "Force":"Weak Necessity",
       "Flavor":"Teleological",
       "polarity":"positive",
@@ -244,8 +276,10 @@ var context_info=[
    },
    {
       "Context":"你想要从B市赶到A市。你可以选择两条线路。它们都需要大约 7 个小时的大巴车程，而且两条路沿途的景色都差不多。所以，",
-      "Sentence":"你[MODAL]走第一条路。",
+      "Sentence":"你[MODAL][CONCORD]走第一条路。",
       "Expression":"可以",
+      "Required_Concord":"会",
+      "Concord_Not_Required":["应该","必须","可以","需要"],
       "Force":"Possibility",
       "Flavor":"Teleological",
       "polarity":"positive",
@@ -262,40 +296,50 @@ var context_info=[
    },
    {
       "Context":"你的朋友想为她的工作买一件新衬衫。 由于该地区有很多不错的专业的服装店，你说……",
-      "Sentence":"你[MODAL]去这家服装店。",
+      "Sentence":"你[MODAL][CONCORD]去这家服装店。",
       "Expression":"可以",
       "Force":"Possibility",
       "Flavor":"Teleological",
       "polarity":"positive",
       "Index":-32
    },
+   // need to come back
    {
       "Context":"你在前往 地点A 的公交车上。你已经有 4 个小时没上厕所了，而且你很尿急。你给你的朋友发短信……",
-      "Sentence":"我[MODAL]上一下厕所！",
+      "Sentence":"我[MODAL][CONCORD]去一下厕所！",
       "Expression":"需要",
+      "Required_Concord":"要",
+      "Concord_Not_Required":["应该","必须","可以","需要"],
       "Force":"Necessity",
       "Flavor":"Circumstantial",
       "polarity":"positive",
       "Index":33
    },
+
+   // this context is modified from the original context
    {
-      "Context":"谈话谈到一半，你想要打喷嚏……你说：",
-      "Sentence":"对不起！ 我[MODAL]打个喷嚏。",
+      "Context":"你和朋友在自驾游途中，你正在开车，但是车快要没有汽油了，你对朋友说",
+      "Sentence":"车[MODAL][CONCORD]加油了",
       "Expression":"得",
+      "Required_Concord":"要",
+      "Concord_Not_Required":["应该","必须","可以","需要"],
       "Force":"Necessity",
       "Flavor":"Circumstantial",
       "polarity":"positive",
+      "Modified":true,
       "Index":34
    },
    {
       "Context":"水正在流进管道。管道有两个出口：左边的出口和右边的出口。你堵住了左边的出口，因此，",
       "Sentence":"水[MODAL]从右边的出口流出来。",
-      "Expression":"必须",
+      "Expression":"一定",
       "Force":"Necessity",
       "Flavor":"Circumstantial",
       "polarity":"positive",
       "Index":35
    },
+
+   // can we change it to we can grow duku trees here
    {
       "Context":"小张来到菲律宾的一个小岛。 她注意到气候和许多植物与她在印度尼西亚访问的一些地方相似。 温度一样，雨量一样，岩石种类和土壤都一样。 但是当她环顾四周时，她并没有在任何地方找到任何独库树。 但是因为温度、降雨量和土壤是相同的，她认为……",
       "Sentence":"独库树[MODAL]在这里生长。",
@@ -305,10 +349,13 @@ var context_info=[
       "polarity":"positive",
       "Index":36
    },
+
+
+   // weird might need to come back
    {
       "Context":"小明之前在意大利学会了怎么做传统的意面。现在小明回到了他自己的国家。他想做传统的意面，但是所需的原材料在他住的地方售罄了。他很沮丧，因为他想要向他的父母展示如何制作传统的意大利面。",
-      "Sentence":"尽管没有所需要的原材料，但是小明[MODAL]做传统的意大利面。",
-      "Expression":"能",
+      "Sentence":"尽管没有所需要的原材料导致小明没办法做出传统的意大利面，但是小明[MODAL]做传统的意大利面。",
+      "Expression":"会",
       "Force":"Possibility",
       "Flavor":"Circumstantial",
       "polarity":"positive",
@@ -316,7 +363,7 @@ var context_info=[
    },
    {
       "Context":"小黄在3周前骑摩托车出了事故，扭伤了脚踝。 小黄现在可以走路了。 但是，医生告诉小黄，事故发生5周后才能走路。",
-      "Sentence":"小黄现在[MODAL]走路了。",
+      "Sentence":"小黄现在[MODAL][CONCORD]走路了。",
       "Expression":"可以",
       "Force":"Possibility",
       "Flavor":"Circumstantial",
@@ -325,16 +372,18 @@ var context_info=[
    },
    {
       "Context":"老罗现在很老了，但他仍然很强壮。 他的孩子们担心他做任何剧烈的劳动会伤到他的背部，所以他们禁止老罗提重物。 但有一天，老罗的朋友老黄让老罗在球场上帮他，因为老黄知道老罗仍然很健壮。 因此，当老黄看到一块大石头需要被挪走时，他立即让老罗过来帮忙（但他没有告诉老罗的孩子们！）。 老黄知道……",
-      "Sentence":"老罗[MODAL]举起那块石头。",
+      "Sentence":"老罗[MODAL][CONCORD]举起那块石头。",
       "Expression":"可以",
+      "Required_Concord":"会",
+      "Concord_Not_Required":["应该","必须","可以","需要"],
       "Force":"Possibility",
       "Flavor":"Circumstantial",
       "polarity":"positive",
       "Index":39
    },
    {
-      "Context":"法律规定，面包车最多可载 13 人。 但是面包车司机多载了一些人，现在面包车上有20人。所以",
-      "Sentence":"面包车[MODAL]搭载 20 人。",
+      "Context":"法律规定，面包车最多可载 13 人。 不过这个面包车比普通的要大很多，所以面包车司机多载了一些人，现在面包车上有20人。尽管违反了规定，",
+      "Sentence":"面包车还是[MODAL]搭载 20 人。",
       "Expression":"可以",
       "Force":"Possibility",
       "Flavor":"Circumstantial",
@@ -342,9 +391,11 @@ var context_info=[
       "Index":40
    },
    {
-      "Context":"你很喜欢音乐家K要开演唱会了，于是你说： ",
-      "Sentence":"我[MODAL]去看K的演唱会。",
+      "Context":"K是你最喜欢的音乐家，他马上要开演唱会了。于是你说：",
+      "Sentence":"太棒了！我[MODAL][CONCORD]去看K的演唱会。",
       "Expression":"想",
+      "Required_Concord":"要",
+      "Concord_Not_Required":["应该","必须","可以","需要"],
       "Force":"Necessity",
       "Flavor":"Bouletic",
       "polarity":"positive",
@@ -353,20 +404,21 @@ var context_info=[
    {
       "Context":"今天是假期，你的朋友问你今天要做什么。你们两个今天都没有事情要做。刚好有一个你觉得非看不可的电影在放映，你说：",
       "Sentence":"今天我[MODAL]去看电影",
-      "Expression":"肯定",
+      "Expression":"想",
       "Force":"Necessity",
       "Flavor":"Bouletic",
       "polarity":"positive",
       "Index":42
    },
+   // does not fit into the context
    {
       "Context":"小天跟他的父母说：",
-      "Sentence":"我的朋友[MODAL]来我们家玩。",
+      "Sentence":"我的朋友[MODAL][CONCORD]来我们家玩。",
       "Expression":"想",
       "Force":"Necessity",
       "Flavor":"Bouletic",
       "polarity":"positive",
-      "Index":43
+      "Index":-43
    },
    {
       "Context":"老王家的灯亮着通常意味着他在家。你想拜访老王。 你走到老王的房子前，发现灯亮着。但是，家门口没有汽车/门边有一双可能是别人的凉鞋。 你心想：",
@@ -497,13 +549,19 @@ var context_info=[
 
 ];
 
-let modals = new Array();
+
+let all_modals = new Array();
 
 for (let i = 0; i < context_info.length;i++)
 {
-  if(!(modals.includes(context_info[i].Expression)))
+  if(!(all_modals.includes(context_info[i].Expression)))
   {
-      modals.push(context_info[i].Expression);
+      all_modals.push(context_info[i].Expression);
   }
   
 }
+
+const modals = all_modals.filter(modal=>modal.length>1);
+const concords = all_modals.filter(concord=>concord.length==1);
+console.log(concords)
+console.log(modals)

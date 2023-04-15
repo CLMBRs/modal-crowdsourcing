@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My experiment</title>
+    <script src="../jspsych/jspsych.js"></script>
+    <script src="../jspsych/plugin-html-keyboard-response.js"></script>
+    <script src="../jspsych/plugin-html-button-response.js"></script>
+    <script src="../jspsych/plugin-survey.js"></script>
+    <script type="text/javascript" src="../contexts/mandarin.js"></script>
+    <script src="https://unpkg.com/@jspsych-contrib/plugin-pipe"></script>
+    <link href="../jspsych/jspsych.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body></body>
+  <script>
+    const jsPsych = initJsPsych({experiment_width:1000});
+
+    // initializing modal variables before the start of the trial
+    const modals_sampled = jsPsych.randomization.sampleWithReplacement(modals,1);
+    const modal = modals_sampled[0];
+
+    // a function that formulate questions 
+    function forumulate_contexts(selected_modal,all_info)
+    {
+      let final_contexts = new Array();
+      for (let i =0;i<all_info.length;i++)
+      {
+        if(all_info[i].polarity=='positive'&&all_info[i].Index>=0)
+        {
+          c = all_info[i].Context;
+          exp = all_info[i].Sentence;
+          s = exp.replace("[MODAL]",selected_modal);
+          s_final = s.replace("[MODAL]",selected_modal);
+          var info = {context:c,expressions:s_final,index:all_info[i].Index};
+          final_contexts.push(info);
+        }
+      }
+      return final_contexts;
+    }
+
+    const question_info = forumulate_contexts(modal,context_info);
+
+
+
+    const instruction = {
+      type: jsPsychHtmlButtonResponse,
+      prompt:"",
+      stimulus: "<p><strong>中文情态动词的调查问卷</strong><\p> 这个调查问卷旨在研究不同语境下，情态动词的用法。受试者需要根据语境判断表达方式是否符合语境。问卷共40道题，填写大约需要5分钟。在选择时只需要判断表达方式是否正确即可。",
+      choices:["按此处开始本实验"],
+      trial_duration:100000
+    };
+
+    const survey = {
+        type: jsPsychSurvey,
+        pages: [
+          [
+            {
+              type: 'html',
+              prompt: jsPsych.timelineVariable('context')
+            },
+
+            {
+              type: 'multi-choice',
+              prompt: jsPsych.timelineVariable('expressions'),
+              // function(){
+              //   var c = jsPsych.timelineVariable('context');
+              //   var m = jsPsych.timelineVariable('expressions');
+              //   return `${jsPsych.timelineVariable("context")}\n${jsPsych.timelineVariable('expressions')}`
+              //   //return  c+'\n'+m;
+              // },
+              options: ['合适', '不合适'],
+              required: true
+            }
+          ]
+        ],
+        // Add data at the whole-trial level here
+        data: {
+          'context': jsPsych.timelineVariable('context'),
+          'expressions': jsPsych.timelineVariable('expressions'),
+          'context_index':jsPsych.timelineVariable('index'),
+          'modal':modal                                                  
+        },
+        button_label_finish: '下一页',
+        required_error: true             
+  };
+
+    const subject_id = jsPsych.randomization.randomID(10);
+    const filename = `${subject_id}.csv`;
+    
+
+
+    const save_data = {
+                type: jsPsychPipe,
+                action: "save",
+                experiment_id: "3wzcpHkRKJQI",
+                filename: filename,
+                data_string: ()=>jsPsych.data.get().csv()
+              };
+    
+    const exit_instruction = {
+            type: jsPsychHtmlKeyboardResponse,
+            stimulus: "本实验到此结束。\nThis is the end of the experiment. You can close the window now. If you have any questions, feel free to contact us at <a href='mailto:qg07@uw.edu'>qg07@uw.edu</a>",
+            trial_duration:60000,
+            //on_finish: function(){jsPsych.endExperiment()}
+    };
+
+    var trial_timeline = {
+      timeline: [survey],
+      timeline_variables: question_info
+    };
+
+    jsPsych.run([instruction,trial_timeline,save_data,exit_instruction]);
+  </script>
+</html>
