@@ -145,7 +145,7 @@ var context_info=[
       "Index":17
    },
    {
-      "Context":"在英格兰，一般会建议在商店中佩戴面罩，但不是强制的。 走进商店前，你心想……",
+      "Context":"在英格兰，一般会建议在商店中佩戴口罩，但不是强制的。 走进商店前，你心想……",
       "Sentence":"我[MODAL][CONCORD]戴上口罩。",
       "Expression":"应该",
       "Required_Concord":"要",
