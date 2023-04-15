@@ -64,7 +64,7 @@
    },
    {
       "Context":"这位老师不怎么靠谱。他的学生永远都不知道他是否会来上课。有时他会出现，有时他不会。现在距离他的课程开始还有两个小时，他的学生不知道他是否会出现。他们觉得：",
-      "Sentence":"老师今天[MODAL]会来学校上课",
+      "Sentence":"老师今天[MODAL]来学校上课",
       "Expression":"应该",
       "Force":"Possibility",
       "Flavor":"Epistemic",
