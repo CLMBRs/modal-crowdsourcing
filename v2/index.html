@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>My experiment</title>
+    <title>Experiment V2</title>
     <script src="../jspsych/jspsych.js"></script>
     <script src="../jspsych/plugin-html-keyboard-response.js"></script>
     <script src="../jspsych/plugin-html-button-response.js"></script>
@@ -34,7 +34,6 @@
           s1 = s.replace("[MODAL]",selected_modal);
           s2 = s1.replace("[CONCORD]","");
           s_final = s2.replace("[CONCORD]","");
-          console.log(s_final);
           var info = {context:c,expressions:s_final,index:all_info[i].Index};
           final_contexts.push(info);
         }
