@@ -15,27 +15,34 @@
     const jsPsych = initJsPsych({experiment_width:1000});
 
     // initializing modal variables before the start of the trial
-    const modals_sampled = jsPsych.randomization.sampleWithReplacement(modals,1);
+    const modals_sampled = jsPsych.randomization.sampleWithReplacement(all_modals,1);
     const modal = modals_sampled[0];
-
+    console.log(modal);
+    
     // a function that formulate questions 
     function forumulate_contexts(selected_modal,all_info)
     {
       let final_contexts = new Array();
       for (let i =0;i<all_info.length;i++)
       {
+       
         if(all_info[i].polarity=='positive'&&all_info[i].Index>=0)
         {
           c = all_info[i].Context;
           exp = all_info[i].Sentence;
           s = exp.replace("[MODAL]",selected_modal);
-          s_final = s.replace("[MODAL]",selected_modal);
+          s1 = s.replace("[MODAL]",selected_modal);
+          s2 = s1.replace("[CONCORD]","");
+          s_final = s2.replace("[CONCORD]","");
+          console.log(s_final);
           var info = {context:c,expressions:s_final,index:all_info[i].Index};
           final_contexts.push(info);
         }
       }
       return final_contexts;
     }
+
+
 
     const question_info = forumulate_contexts(modal,context_info);
 
@@ -44,10 +51,77 @@
     const instruction = {
       type: jsPsychHtmlButtonResponse,
       prompt:"",
-      stimulus: "<p><strong>中文情态动词的调查问卷</strong><\p> 这个调查问卷旨在研究不同语境下，情态动词的用法。受试者需要根据语境判断表达方式是否符合语境。问卷共40道题，填写大约需要5分钟。在选择时只需要判断表达方式是否正确即可。",
-      choices:["按此处开始本实验"],
+      stimulus: "<p><strong>中文情态动词的调查问卷</strong><\p> 这个调查问卷旨在研究不同语境下，情态动词的用法。受试者需要根据语境判断表达方式是否正确。问卷共40道题，填写大约需要5-10分钟。在选择时需要判断表达句子是否符合语法，并判断表达是否正确。",
+      choices:["按此处开始"],
       trial_duration:100000
     };
+
+    const tutorial_instruction= {
+      type: jsPsychHtmlButtonResponse,
+      prompt:"",
+      stimulus: "实验正式前会进行一段演示，演示中会示范如何判断语法是否正确，以及语意是否符合逻辑，演示轮的选择并不会被记录。",
+      choices:["按此处开始演示"],
+      trial_duration:100000
+    };
+
+    const tutorial = {
+      type: jsPsychSurvey,
+      pages: [
+      [
+        {
+          type: 'html',
+          prompt: "<font size='+1'>你的朋友刚从外面回来，你发现他身上湿哒哒的，于是你想</font>"
+        },
+
+        {
+          type: 'multi-choice',
+          prompt: "外面一定在下雨",
+          options: ['语意正确', '语意不正确','语法错误'],
+        },
+        {
+          type: 'html',
+          prompt:"<p>此处可以回答：<FONT COLOR='RED'> 语意正确</FONT>，此处你根据朋友衣服是湿的判断外面在下雨，这句话的语言在这个语境下是正确的<\p>",
+        },
+      ],
+
+      [
+        {
+          type: 'html',
+          prompt: "<font size='+1'>在课上，数学老师说，根据运算原则</font>"
+        },
+
+        {
+          type: 'multi-choice',
+          prompt: "1+1需要等于2",
+          options: ['语意正确', '语意不正确','语法错误'],
+        },
+        {
+          type: 'html',
+          prompt:"<p>此处可以回答：<FONT COLOR='RED'> 语意不正确</FONT>，尽管这句话语法没有问题，但是语意并不通顺<\p>",
+        },
+      ],     
+      [
+        {
+          type: 'html',
+          prompt: "<font size='+1'>今天是开学第一天，</font>"
+        },
+
+        {
+          type: 'multi-choice',
+          prompt: "小明可以能去上学",
+          options: ['语意正确', '语意不正确','语法错误'],
+        },
+        {
+          type: 'html',
+          prompt:"<p>此处可以回答：<FONT COLOR='RED'> 语法错误</FONT>，即使没有语境，这句话单独读起来也不是很通顺，说明它有语法问题。<\p>",
+        },
+      ],
+      
+      ],
+      button_label_next: "点此处继续",
+      button_label_back:"上一页",
+      button_label_finish:"演示到此结束，点击此处开始实验"
+    }
 
     const survey = {
         type: jsPsychSurvey,
@@ -61,13 +135,7 @@
             {
               type: 'multi-choice',
               prompt: jsPsych.timelineVariable('expressions'),
-              // function(){
-              //   var c = jsPsych.timelineVariable('context');
-              //   var m = jsPsych.timelineVariable('expressions');
-              //   return `${jsPsych.timelineVariable("context")}\n${jsPsych.timelineVariable('expressions')}`
-              //   //return  c+'\n'+m;
-              // },
-              options: ['合适', '不合适'],
+              options: ['语意正确', '语意不正确','语法错误'],
               required: true
             }
           ]
@@ -87,15 +155,14 @@
     const filename = `${subject_id}.csv`;
     
 
-
     const save_data = {
                 type: jsPsychPipe,
                 action: "save",
-                experiment_id: "3wzcpHkRKJQI",
+                experiment_id: "nBgReUoTbRgv",
                 filename: filename,
                 data_string: ()=>jsPsych.data.get().csv()
               };
-    
+
     const exit_instruction = {
             type: jsPsychHtmlKeyboardResponse,
             stimulus: "本实验到此结束。\nThis is the end of the experiment. You can close the window now. If you have any questions, feel free to contact us at <a href='mailto:qg07@uw.edu'>qg07@uw.edu</a>",
@@ -108,6 +175,6 @@
       timeline_variables: question_info
     };
 
-    jsPsych.run([instruction,trial_timeline,save_data,exit_instruction]);
+    jsPsych.run([instruction,tutorial_instruction,tutorial,trial_timeline,save_data,exit_instruction]);
   </script>
 </html>

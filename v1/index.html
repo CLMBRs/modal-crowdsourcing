@@ -15,11 +15,7 @@
     const jsPsych = initJsPsych({experiment_width:1000});
 
     // initializing modal variables before the start of the trial
-    const test_concord = jsPsych.randomization.randomInt((0,1));
-
     const modals_sampled = jsPsych.randomization.sampleWithReplacement(all_modals,1);
-
-
     const modal = modals_sampled[0];
 
     console.log(modal);
