@@ -397,7 +397,7 @@
    },
    {
       "Context":"Your friend is having a birthday party. She tells you that she would like it if everyone invited wore formal clothes, but that it is not necessary to wear formal clothes to attend. You think to yourself… I ought to wear formal clothes to the party, but",
-      "Sentence 1":"I don’t [MODAL] wear formal clothes.",
+      "Sentence":"I don’t [MODAL] wear formal clothes.",
       "Expression":"have to",
       "Force":"Necessity",
       "Flavor":"Deontic",
