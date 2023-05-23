@@ -75,11 +75,11 @@
         {
           type: 'multi-choice',
           prompt: "外面一定在下雨",
-          options: ['语意正确', '语意不正确','语法错误'],
+          options: ['正确', '不正确','语法错误'],
         },
         {
           type: 'html',
-          prompt:"<p>此处可以回答：<FONT COLOR='RED'> 语意正确</FONT>，此处你根据朋友衣服是湿的判断外面在下雨，这句话的语言在这个语境下是正确的<\p>",
+          prompt:"<p>此处可以回答：<FONT COLOR='RED'> 正确</FONT>，此处你根据朋友衣服是湿的判断外面在下雨，这句话的语言在这个语境下是正确的<\p>",
         },
       ],
 
@@ -92,11 +92,11 @@
         {
           type: 'multi-choice',
           prompt: "1+1需要等于2",
-          options: ['语意正确', '语意不正确','语法错误'],
+          options: ['正确', '不正确','语法错误'],
         },
         {
           type: 'html',
-          prompt:"<p>此处可以回答：<FONT COLOR='RED'> 语意不正确</FONT>，尽管这句话语法没有问题，但是语意并不通顺<\p>",
+          prompt:"<p>此处可以回答：<FONT COLOR='RED'> 不正确</FONT>，尽管这句话语法没有问题，但是语意并不通顺<\p>",
         },
       ],     
       [
@@ -108,7 +108,7 @@
         {
           type: 'multi-choice',
           prompt: "小明可以能去上学",
-          options: ['语意正确', '语意不正确','语法错误'],
+          options: ['正确', '不正确','语法错误'],
         },
         {
           type: 'html',
@@ -134,7 +134,7 @@
             {
               type: 'multi-choice',
               prompt: jsPsych.timelineVariable('expressions'),
-              options: ['语意正确', '语意不正确','语法错误'],
+              options: ['正确', '不正确','语法错误'],
               required: true
             }
           ]
